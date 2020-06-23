@@ -12,6 +12,8 @@ This is an Express application that allows the user to compose and save notes.
 4. Run the PORT number in your local browser. Ex. localhost:8080
 5. Follow the prompts to use the application within your browser.
 
+## Demo
+
 ## Usage
 1. Click the Get Started button on the home page.
 2. Type out the Note Title and Note Text in their respective text blocks.
