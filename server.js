@@ -17,3 +17,7 @@ app.get("/notes", function(req, res) {
 app.get("/api/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "/db/db.json"));
 });
+
+app.get("/api/notes:id", function (req, res) {
+    let savedNotes = JSON.parse(fs.readFileSynce("./db/db.json", "utf8"));
+});
