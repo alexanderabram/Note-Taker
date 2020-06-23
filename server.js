@@ -23,3 +23,6 @@ app.get("/api/notes:id", function (req, res) {
     res.JSON(savedNotes[Number(req.params.id)]);
 });
 
+app.get("*", function(req, res) {
+    res.sendFile(path.join(mainDir, "index.html"));
+});
