@@ -7,14 +7,14 @@ const port = 8080;
 const mainDir = path.join(__dirname, "/public");
 
 app.use(express.static('public'));
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/notes", function(req, res) {
+app.get("/notes", function (req, res) {
     res.sendFile(path.join(mainDir, "notes.html"));
 });
 
-app.get("/api/notes", function(req, res) {
+app.get("/api/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/db/db.json"));
 });
 
@@ -23,11 +23,11 @@ app.get("/api/notes:id", function (req, res) {
     res.JSON(savedNotes[Number(req.params.id)]);
 });
 
-app.get("*", function(req, res) {
+app.get("*", function (req, res) {
     res.sendFile(path.join(mainDir, "index.html"));
 });
 
-app.post("/api/notes", function(req, res) {
+app.post("/api/notes", function (req, res) {
     let savedNotes = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
     let newNote = req.body;
     let uniqueID = (savedNotes.length).toString();
@@ -39,7 +39,7 @@ app.post("/api/notes", function(req, res) {
     res.json(savedNotes);
 })
 
-app.delete("/api/notes/:id", function(req, res) {
+app.delete("/api/notes/:id", function (req, res) {
     let savedNotes = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
     let noteID = req.params.id;
     let newID = 0;
@@ -57,6 +57,6 @@ app.delete("/api/notes/:id", function(req, res) {
     res.json(savedNotes);
 })
 
-app.listen(port, function() {
-    console.log(`Now listening to port ${port}. Enjoy your stay!`);
+app.listen(port, function () {
+    console.log(`Now listening to port ${port}.`);
 })
