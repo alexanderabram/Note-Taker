@@ -52,3 +52,11 @@ app.delete("/api/notes/:id", function(req, res) {
         currNote.id = newID.toString();
         newID++;
     }
+
+    fs.writeFileSync("./db/db.json", JSON.stringify(savedNotes));
+    res.json(savedNotes);
+})
+
+app.listen(port, function() {
+    console.log(`Now listening to port ${port}. Enjoy your stay!`);
+})
