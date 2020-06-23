@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const app = express();
-var PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080;
 const mainDir = path.join(__dirname, "/public");
 
 app.use(express.static('public'));
@@ -58,5 +58,5 @@ app.delete("/api/notes/:id", function (req, res) {
 })
 
 app.listen(PORT, function () {
-    console.log(`Now listening to port ${port}.`);
+    console.log(`Now listening to PORT ${PORT}.`);
 })
