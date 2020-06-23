@@ -20,4 +20,6 @@ app.get("/api/notes", function(req, res) {
 
 app.get("/api/notes:id", function (req, res) {
     let savedNotes = JSON.parse(fs.readFileSynce("./db/db.json", "utf8"));
+    res.JSON(savedNotes[Number(req.params.id)]);
 });
+
