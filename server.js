@@ -47,3 +47,8 @@ app.delete("/api/notes/:id", function(req, res) {
     savedNotes = savedNotes.filter(currNote => {
         return currNote.id != noteID;
     })
+
+    for (currNote of savedNotes) {
+        currNote.id = newID.toString();
+        newID++;
+    }
