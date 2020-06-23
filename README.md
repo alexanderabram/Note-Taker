@@ -17,3 +17,9 @@ This is an Express application that allows the user to compose and save notes.
 4. Click the Pencil icon to compose a new note.
 5. Saved notes can be found on the left side of the notes page.
 6. Click the red trashcan icon to delete a saved note.
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to disccus what you would like to change.
+
+## License
+n/a
